@@ -1,6 +1,17 @@
 function han = oplot(varargin)
-base_font_size=10;
-base_line_width=1;
+%% 如果是PPT展示，请用参数"PPT"（要加引号）
+
+if nargin==0
+    base_font_size=10;
+    base_line_width=1;
+elseif lower(varargin{1})=="ppt"
+    base_font_size=20;
+    base_line_width=2;
+else
+    error('好像出错了')
+end
+
+
 %% 线型与标记方案
 line_style={":","-","--","-."};
 line_marker={"*","^","o","d","p"};
